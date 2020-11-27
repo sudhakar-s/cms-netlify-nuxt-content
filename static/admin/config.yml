@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/img # Media files will be stored in the repo under static/img
+public_folder: /img # The src attribute for uploaded media will begin with /img
+
+collections: # content
+  - name: 'blog'
+    label: 'Blog' # What the admin UI calls the post type.
+    folder: 'content/blog' # Where files of this type are stored, relative to the repo root.
+    format: 'frontmatter'
+    create: true # Set to true to allow users to create new files in this collection.
+    slug: '{{slug}}' # Template for filenames
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+    # Fields listed here are shown as fields in the content editor, then saved as front matter at the beginning of the document (except for body, which follows the front matter)
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

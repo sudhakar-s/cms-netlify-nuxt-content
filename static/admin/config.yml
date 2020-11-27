@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: https://github.com/sudhakar-s/cms-netlify-nuxt-content.git
   branch: main # Branch to update (optional; defaults to master)
 
